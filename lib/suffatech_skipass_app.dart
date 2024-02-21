@@ -1,7 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
-import 'package:suffa_skipass/pages/homepage.dart';
+import 'package:suffa_skipass/pages/auth/authpage.dart';
 import 'package:suffa_skipass/skipass_routes.dart';
 import 'package:suffa_skipass/utils/theme_utils.dart';
 
@@ -27,7 +27,7 @@ class _SuffaSkipassState extends State<SuffaSkipass> {
         localizationsDelegates: Locales.delegates,
         supportedLocales: Locales.supportedLocales,
         locale: locale,
-        home: const HomePage(),
+        home: const AuthPage(),
       );
     });
   }

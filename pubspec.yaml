@@ -17,6 +17,9 @@ dependencies:
   provider: ^6.1.1
   flutter_locales: ^3.0.1
   simple_snowfall: ^1.0.0
+  rive: ^0.12.4
+  info_popup: ^4.3.1
+  popover: ^0.3.0
 
 dev_dependencies:
   flutter_test:
@@ -35,7 +38,24 @@ flutter:
     - assets/locales/tr.json
 
     - assets/images/companylogo.png
+    - assets/images/companylogo_dark.png
 
     - assets/images/contents/skiers.png
     - assets/images/contents/fibers.jpg
     - assets/images/contents/pistes.png
+    - assets/images/contents/house.jpeg
+    - assets/images/contents/auth.jpeg
+
+    - assets/images/imageicon/a1.png
+    - assets/images/imageicon/a2.png
+    - assets/images/imageicon/a3.png
+    - assets/images/imageicon/a4.png
+
+    - assets/icons/home.riv
+    - assets/icons/person.riv
+    - assets/icons/search.riv
+    - assets/icons/settings.riv
+    - assets/icons/star.riv
+    - assets/icons/update.riv
+
+    - assets/icons/menubutton.riv

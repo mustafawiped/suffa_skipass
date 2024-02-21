@@ -22,7 +22,7 @@ class SkipassThemeUtils {
     colorScheme: const ColorScheme.dark().copyWith(
       primary: SkipassColors.primaryColor,
       secondary: SkipassColors.secondaryColor,
-      onSurface: SkipassColors.lightColor,
+      onSurface: SkipassColors.surfaceColor,
     ),
   );
 
@@ -40,4 +40,29 @@ class SkipassThemeUtils {
       View.of(context).platformDispatcher.platformBrightness == Brightness.light
           ? SkipassColors.lightColor
           : SkipassColors.lightW100Color;
+
+  static Color getSubtitleColor(BuildContext context) =>
+      View.of(context).platformDispatcher.platformBrightness == Brightness.light
+          ? Colors.grey.shade300
+          : Colors.grey.shade500;
+
+  static Color getBgColor(BuildContext context) =>
+      View.of(context).platformDispatcher.platformBrightness == Brightness.light
+          ? SkipassColors.lightColor
+          : SkipassColors.darkColor;
+
+  static dynamic getSpaciousBgColor(BuildContext context) =>
+      View.of(context).platformDispatcher.platformBrightness == Brightness.light
+          ? Colors.grey[300]
+          : Colors.grey[800];
+
+  static dynamic getSpaciousBgColorReverse(BuildContext context) =>
+      View.of(context).platformDispatcher.platformBrightness == Brightness.light
+          ? Colors.grey[800]
+          : Colors.grey[300];
+
+  static Color getItemTextColor(BuildContext context) =>
+      View.of(context).platformDispatcher.platformBrightness == Brightness.light
+          ? const Color.fromARGB(255, 237, 239, 253)
+          : const Color.fromARGB(255, 237, 239, 253);
 }
