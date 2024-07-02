@@ -6,6 +6,7 @@ import 'package:popover/popover.dart';
 import 'package:suffa_skipass/core/resources/skipass_assets.dart';
 import 'package:suffa_skipass/core/resources/skipass_size.dart';
 import 'package:suffa_skipass/pages/lifts/widgets/filter_menu_items.dart';
+import 'package:suffa_skipass/utils/theme_utils.dart';
 
 class LiftsPage extends StatefulWidget {
   const LiftsPage({super.key});
@@ -197,7 +198,7 @@ class _LiftsPageState extends State<LiftsPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              buildHeader(context, "Güncel İstatistikler"),
+              buildHeader(context, "Genel İstatistikler"),
               buildHeader(context, getActiveLiftState()),
             ],
           ),
@@ -279,9 +280,9 @@ class _LiftsPageState extends State<LiftsPage> {
   Container buildLiftLists() {
     return Container(
       margin: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 237, 239, 253),
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        color: SkipassThemeUtils.getContentBackgroundColor(context),
+        borderRadius: const BorderRadius.all(
           Radius.circular(10),
         ),
       ),
@@ -317,8 +318,8 @@ class _LiftsPageState extends State<LiftsPage> {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: GoogleFonts.outfit(
-                              textStyle: TextStyle(
-                                color: Colors.grey[800],
+                              textStyle: const TextStyle(
+                                color: Color.fromARGB(255, 237, 239, 253),
                                 fontWeight: FontWeight.w500,
                                 fontSize: 13,
                               ),
@@ -330,7 +331,7 @@ class _LiftsPageState extends State<LiftsPage> {
                             overflow: TextOverflow.ellipsis,
                             style: GoogleFonts.outfit(
                               textStyle: TextStyle(
-                                color: Colors.grey[700],
+                                color: Colors.grey[300],
                                 fontWeight: FontWeight.w500,
                                 fontSize: 10,
                               ),
@@ -342,7 +343,7 @@ class _LiftsPageState extends State<LiftsPage> {
                             overflow: TextOverflow.ellipsis,
                             style: GoogleFonts.outfit(
                               textStyle: TextStyle(
-                                color: Colors.grey[700],
+                                color: Colors.grey[300],
                                 fontWeight: FontWeight.w500,
                                 fontSize: 10,
                               ),
@@ -362,8 +363,8 @@ class _LiftsPageState extends State<LiftsPage> {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.outfit(
-                          textStyle: TextStyle(
-                            color: Colors.grey[800],
+                          textStyle: const TextStyle(
+                            color: Color.fromARGB(255, 237, 239, 253),
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
                           ),
@@ -377,7 +378,7 @@ class _LiftsPageState extends State<LiftsPage> {
                             overflow: TextOverflow.ellipsis,
                             style: GoogleFonts.outfit(
                               textStyle: TextStyle(
-                                color: Colors.grey[700],
+                                color: Colors.grey[300],
                                 fontWeight: FontWeight.w500,
                                 fontSize: 10,
                               ),
@@ -428,7 +429,7 @@ class _LiftsPageState extends State<LiftsPage> {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 237, 239, 253),
+          color: SkipassThemeUtils.getContentBackgroundColor(context),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
@@ -450,8 +451,8 @@ class _LiftsPageState extends State<LiftsPage> {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.outfit(
-                      textStyle: TextStyle(
-                        color: Colors.grey[800],
+                      textStyle: const TextStyle(
+                        color: Color.fromARGB(255, 237, 239, 253),
                         fontWeight: FontWeight.w500,
                         fontSize: 13,
                       ),
@@ -463,7 +464,7 @@ class _LiftsPageState extends State<LiftsPage> {
                         activeCount,
                         style: GoogleFonts.outfit(
                           textStyle: TextStyle(
-                            color: Colors.grey[800],
+                            color: Colors.grey[300],
                             fontWeight: FontWeight.w400,
                             fontSize: 11,
                           ),
@@ -483,7 +484,7 @@ class _LiftsPageState extends State<LiftsPage> {
                         inActiveCount,
                         style: GoogleFonts.outfit(
                           textStyle: TextStyle(
-                            color: Colors.grey[800],
+                            color: Colors.grey[300],
                             fontWeight: FontWeight.w400,
                             fontSize: 11,
                           ),

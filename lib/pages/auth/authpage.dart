@@ -5,7 +5,6 @@ import 'package:suffa_skipass/core/resources/skipass_size.dart';
 import 'package:suffa_skipass/pages/auth/login/loginpage.dart';
 import 'package:suffa_skipass/pages/auth/login/widgets/info_texts.dart';
 import 'package:suffa_skipass/pages/auth/register/registerpage.dart';
-import 'package:suffa_skipass/pages/home/homepage.dart';
 import 'package:suffa_skipass/utils/theme_utils.dart';
 
 class AuthPage extends StatefulWidget {
@@ -31,67 +30,10 @@ class _AuthPageState extends State<AuthPage> {
                 titleText: "Hayalinizdeki Tatili\nBurada Keşfedin!",
                 subTitleText:
                     "Suffa Skipass ile kayak merkezindeki tüm eğlenceli aktiviteleri, kafeleri, restoranları ve konaklama yerlerini görebilirsiniz!"),
-            const SizedBox(height: 30),
-            buildSignInWithoutLogging(),
+            const SizedBox(height: 60),
             buildSignInOrSignUp(),
           ],
         )));
-  }
-
-  Padding buildSignInWithoutLogging() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-      child: Column(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, HomePage.routeName, (route) => false);
-            },
-            child: Text(
-              "giriş yapmadan devam et..",
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              style: GoogleFonts.outfit(
-                textStyle: TextStyle(
-                  color:
-                      View.of(context).platformDispatcher.platformBrightness ==
-                              Brightness.light
-                          ? Colors.grey.shade800
-                          : Colors.grey.shade200,
-                  fontWeight: FontWeight.w600,
-                  fontSize: SkipassSizes.textMiniTitleSize,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 15),
-          Row(
-            children: [
-              Expanded(
-                child: Divider(
-                  color: Colors.grey.shade400,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text(
-                  'VEYA',
-                  style: GoogleFonts.outfit(
-                      textStyle: TextStyle(color: Colors.grey.shade500)),
-                ),
-              ),
-              Expanded(
-                child: Divider(
-                  color: Colors.grey.shade400,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 15),
-        ],
-      ),
-    );
   }
 
   Padding buildSignInOrSignUp() {

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:suffa_skipass/core/resources/skipass_assets.dart';
+import 'package:suffa_skipass/pages/card_detail/card_detail_page.dart';
 import 'package:suffa_skipass/pages/home/widgets/bottom_content.dart';
 import 'package:suffa_skipass/pages/home/widgets/fast_access_items.dart';
 import 'package:suffa_skipass/pages/home/widgets/main_content.dart';
 import 'package:suffa_skipass/pages/home/widgets/side_menu.dart';
 import 'package:suffa_skipass/pages/lifts/liftspage.dart';
 import 'package:suffa_skipass/pages/pists/pistpage.dart';
+import 'package:suffa_skipass/utils/theme_utils.dart';
 import 'package:suffa_skipass/viewmodel/homepage_vm/home_page_view_model.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,13 +20,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //Locales.string(context, 'hello')
   final HomePageViewModel viewModel = HomePageViewModel();
   final GlobalKey<ScaffoldState> _globalKey = GlobalKey();
 
   final PageController pageController = PageController(initialPage: 0);
 
   bool homeState = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   void changePage(int pageIndex) {
     if (pageIndex != 0 && !homeState) {
@@ -52,7 +58,26 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 10),
 
           // main content
-          const HomePageMainContent(),
+          HomePageMainContent(
+            dataList: viewModel.cardList,
+            selectedIndex: viewModel.selectedCardIndex,
+            onPageChanged: (value) {
+              setState(() {
+                viewModel.selectedCardIndex = value;
+              });
+            },
+            goToCardDetail: (cardData) {
+              viewModel.changeCardModel(cardData);
+              setState(() {
+                homeState = true;
+              });
+              pageController.animateToPage(
+                3,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOutCubicEmphasized,
+              );
+            },
+          ),
 
           // sizedbox
           const SizedBox(height: 20),
@@ -81,7 +106,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       key: _globalKey,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: SkipassThemeUtils.getBgColor(context),
         surfaceTintColor: Colors.transparent,
         leading: !homeState
             ? IconButton(
@@ -120,6 +145,9 @@ class _HomePageState extends State<HomePage> {
 
             // pists page [2],
             const PistPage(),
+
+            // card detail page [3]
+            CardDetailPage(cardData: viewModel.cardModel),
           ],
         ),
       ),

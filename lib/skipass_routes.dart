@@ -4,6 +4,7 @@ import 'package:suffa_skipass/pages/auth/forgotpassword/forgotpasspage.dart';
 import 'package:suffa_skipass/pages/auth/login/loginpage.dart';
 import 'package:suffa_skipass/pages/auth/register/registerpage.dart';
 import 'package:suffa_skipass/pages/home/homepage.dart';
+import 'package:suffa_skipass/pages/pists/pistsearchpage.dart';
 
 class SkipassRoutes {
   static Map<String, StatefulWidget Function(dynamic)> routes(
@@ -23,6 +24,9 @@ class SkipassRoutes {
 
       // forgot password page
       ForgotPasswordPage.routeName: (context) => const ForgotPasswordPage(),
+
+      // pist search page
+      PistSearchPage.routeName: (context) => const PistSearchPage(),
     };
   }
 }

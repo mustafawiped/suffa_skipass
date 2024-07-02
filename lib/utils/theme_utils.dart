@@ -31,6 +31,11 @@ class SkipassThemeUtils {
           ? SkipassColors.primaryColor
           : SkipassColors.secondaryColor;
 
+  static Color getContentBackgroundOtherColor(BuildContext context) =>
+      View.of(context).platformDispatcher.platformBrightness == Brightness.light
+          ? SkipassColors.secondaryColor
+          : SkipassColors.primaryColor;
+
   static Color getContentPickupColor(BuildContext context) =>
       View.of(context).platformDispatcher.platformBrightness == Brightness.light
           ? SkipassColors.secondaryColor
@@ -61,8 +66,8 @@ class SkipassThemeUtils {
           ? Colors.grey[800]
           : Colors.grey[300];
 
-  static Color getItemTextColor(BuildContext context) =>
+  static Color? getItemTextColor(BuildContext context) =>
       View.of(context).platformDispatcher.platformBrightness == Brightness.light
-          ? const Color.fromARGB(255, 237, 239, 253)
+          ? Colors.grey[800]
           : const Color.fromARGB(255, 237, 239, 253);
 }

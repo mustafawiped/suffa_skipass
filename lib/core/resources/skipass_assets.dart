@@ -10,6 +10,7 @@ class SkipassAssets {
   static const String contentPistes = "assets/images/contents/pistes.png";
   static const String contentHouse = "assets/images/contents/house.jpeg";
   static const String contentAuth = "assets/images/contents/auth.jpeg";
+  static const String contentSkirts = "assets/images/contents/skirts.png";
 
   // image icon
   static const String imgiconA1 = "assets/images/imageicon/a1.png";

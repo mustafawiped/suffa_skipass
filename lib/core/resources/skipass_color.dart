@@ -13,4 +13,6 @@ class SkipassColors {
   static const Color lightColor = Color(0xFFF0EBD8);
 
   static const Color lightW100Color = Color.fromARGB(255, 220, 215, 200);
+
+  static Color realisticLightColor = Colors.grey.shade200;
 }
